@@ -26,7 +26,6 @@ class Search extends Component {
   };
 
   changeShelf = (book, shelf) => {
-    console.log(book, shelf);
     BooksAPI.update(book, shelf).then(() => {
       this.initBooks();
     });

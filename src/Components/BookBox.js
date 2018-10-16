@@ -1,6 +1,6 @@
 import React from "react";
 import Book from "./Book";
-import { SHELVES, NAMES_SHELVES } from "../Utils/Constantes";
+import { SHELVES, NAMES_SHELVES } from "../Utils/Constants";
 
 class BookBox extends React.Component {
   getBooksByShelf(shelf) {
@@ -12,8 +12,8 @@ class BookBox extends React.Component {
 
     return (
       <div className="list-books-content">
-        {SHELVES.map(shelf => (
-          <div>
+        {SHELVES.map((shelf, key) => (
+          <div key={key}>
             <div className="bookshelf">
               <h2 className="bookshelf-title">{NAMES_SHELVES[shelf]}</h2>
               <div className="bookshelf-books">
@@ -25,6 +25,7 @@ class BookBox extends React.Component {
                         title={book.title}
                         authors={book.authors}
                         imageLinks={book.imageLinks}
+                        shelf={book.shelf}
                         onChangeShelf={shelf => {
                           onChangeShelf(book, shelf);
                         }}

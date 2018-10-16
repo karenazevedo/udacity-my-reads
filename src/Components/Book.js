@@ -4,8 +4,9 @@ class Book extends React.Component {
   changeShelf = event => {
     this.props.onChangeShelf(event.target.value);
   };
+
   render() {
-    const { title, authors, imageLinks } = this.props;
+    const { title, authors, imageLinks, shelf } = this.props;
 
     const image = imageLinks ? imageLinks["thumbnail"] : {};
 
@@ -17,11 +18,11 @@ class Book extends React.Component {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: "url(" + image + "})"
+              backgroundImage: `url(${image})`
             }}
           />
           <div className="book-shelf-changer">
-            <select value="move" onChange={this.changeShelf}>
+            <select value={shelf} onChange={this.changeShelf}>
               <option value="move" disabled>
                 Move to...
               </option>

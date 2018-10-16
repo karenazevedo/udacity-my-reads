@@ -1,6 +1,7 @@
 # MyReads Project
 
 Project developed to study React
+
 This project helps you to manage your book status.
 
 # Main features:
